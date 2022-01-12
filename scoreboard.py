@@ -20,6 +20,13 @@ class Scoreboard(turtle.Turtle):
             self.best_player = data[1]
         self.update_scoreboard()
 
+    def start_game(self):
+        self.clear()
+        self.write(arg="Press SPACE to play!",
+                   move=False,
+                   align=ALIGNMENT,
+                   font=FONT)
+
     def update_scoreboard(self):
         self.clear()
         self.write(arg=f"Score: {self.score} Player: {self.user_name}\n"
