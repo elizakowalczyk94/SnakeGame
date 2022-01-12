@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 import time
 from Snake import Snake
 import food
@@ -10,6 +10,8 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
+user_name = screen.textinput(title="User data", prompt="Enter your name: ")
+
 food = food.Food()
 snake = Snake()
 
@@ -19,7 +21,7 @@ screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
-scoreboard = scoreboard.Scoreboard()
+scoreboard = scoreboard.Scoreboard(user_name)
 
 is_game_on = True
 while is_game_on:
